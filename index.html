@@ -684,12 +684,15 @@
 		<script>
 			// var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
 			var d = new Date('2021-04-26');
+			d.setHours(9);
 
 			// default example
 			simplyCountdown('.simply-countdown-one', {
 				year: d.getFullYear(),
 				month: d.getMonth() + 1,
-				day: d.getDate()
+				day: d.getDate(),
+				hours: d.getHours(),
+				enableUtc: false
 			});
 
 			//jQuery example
@@ -697,6 +700,7 @@
 				year: d.getFullYear(),
 				month: d.getMonth() + 1,
 				day: d.getDate(),
+				hours: d.getHours(),
 				enableUtc: false
 			});
 		</script>
