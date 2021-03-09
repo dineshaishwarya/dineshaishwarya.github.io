@@ -215,14 +215,17 @@
 
 	var enableMaps = function() {
 
-		var map = L.map('map').setView([9.4588084, 77.7923182], 15);
+		var map = L.map('map').setView([9.4588084, 77.7923182], 16);
 
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(map);
 
 		L.marker([9.4588084, 77.7923182]).addTo(map)
-			.bindPopup('Master Printers <br> Association Hall')
+			.on('click', function() {
+				window.open('https://goo.gl/maps/4XwiWD6sJtFKAra58','_blank');
+			})
+			.bindPopup('Click to open in maps')
 			.openPopup();
 	};
 
